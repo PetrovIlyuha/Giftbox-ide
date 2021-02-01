@@ -1,0 +1,17 @@
+.tooltip-theme {
+  background: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.react-draggable-transparent-selection .cell-list {
+  margin-bottom: 100vh;
+}
+
+.logo-main-styles {
+  margin-left: 40;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
