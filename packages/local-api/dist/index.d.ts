@@ -1,2 +1,1 @@
-declare const _default: () => void;
-export default _default;
+export declare const serveDocs: (port: number, filename: string, dir: string, useProxy: boolean) => Promise<void>;

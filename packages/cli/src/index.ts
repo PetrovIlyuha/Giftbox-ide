@@ -1,3 +1,8 @@
-import serve from 'local-api';
+#!/usr/bin/env node
 
-serve();
+import { serveCommand } from './commands/serve';
+import { program } from 'commander';
+
+program.addCommand(serveCommand);
+
+program.parse(process.argv);

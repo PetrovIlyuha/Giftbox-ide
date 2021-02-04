@@ -1,8 +1,13 @@
 {
-  "name": "giftbox-ide",
+  "name": "@giftbox-cli/local-client",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "build"
+  ],
+  "devDependencies": {
     "@monaco-editor/react": "^4.0.7",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -36,13 +41,15 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "2.3.0",
     "typescript": "^4.0.3",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "@types/redux-logger": "^3.0.8"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepublishOnly": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -61,8 +68,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/redux-logger": "^3.0.8"
   }
 }
