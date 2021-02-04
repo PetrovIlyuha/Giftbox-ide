@@ -1,7 +1,8 @@
 import path from 'path';
 import { Command } from 'commander';
-import { serveDocs } from 'local-api';
+import { serveDocs } from '@giftbox-cli/local-api';
 
+const isProduction = process.env.NODE_ENV === 'production';
 export const serveCommand = new Command()
   .command('serve [filename]')
   .description('Open a file for editing')
@@ -13,9 +14,10 @@ export const serveCommand = new Command()
         parseInt(options.port),
         path.basename(filename),
         filepath,
+        !isProduction,
       );
       console.log(
-        `Opened ${filename}. Navigate to http://localhost:${options.port} to edit your giftbox notebook`,
+        `Opened ${filepath}/${filename}. Navigate to http://localhost:${options.port} to edit your giftbox notebook`,
       );
     } catch (error) {
       if (error.code === 'EADDRINUSE') {

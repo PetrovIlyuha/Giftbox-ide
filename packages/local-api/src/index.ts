@@ -21,10 +21,9 @@ export const serveDocs = (
       }),
     );
   } else {
-    console.log(
-      `Serving pre-installed version using static path and lerna module system`,
+    const packageBuildPath = require.resolve(
+      '@giftbox-cli/local-client/build/index.html',
     );
-    const packageBuildPath = require.resolve('local-client/build/index.html');
     app.use(express.static(path.dirname(packageBuildPath)));
   }
 
