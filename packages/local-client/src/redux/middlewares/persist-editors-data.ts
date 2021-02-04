@@ -23,7 +23,6 @@ export const persistEditorsData = ({
     let timer;
     clearTimeout(timer);
     timer = setTimeout(() => {
-      console.log('saving data');
       saveCells()(dispatch, getState);
     }, 250);
   }
