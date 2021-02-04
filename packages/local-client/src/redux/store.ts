@@ -3,29 +3,13 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import logger from 'redux-logger';
-import { ActionType } from './action-types';
+import { persistEditorsData } from './middlewares/persist-editors-data';
 
-const middlewares = [thunk, logger];
+const middlewares = [thunk, logger, persistEditorsData];
+const middlewaresLoggerSilent = [thunk, persistEditorsData];
 
 export const store = createStore(
   rootReducer,
   {},
-  composeWithDevTools(applyMiddleware(...middlewares)),
+  composeWithDevTools(applyMiddleware(...middlewaresLoggerSilent)),
 );
-
-store.dispatch({
-  type: ActionType.INSERT_CELL_AFTER,
-  payload: { id: null, type: 'code' },
-});
-store.dispatch({
-  type: ActionType.INSERT_CELL_AFTER,
-  payload: { id: null, type: 'text' },
-});
-store.dispatch({
-  type: ActionType.INSERT_CELL_AFTER,
-  payload: { id: null, type: 'code' },
-});
-store.dispatch({
-  type: ActionType.INSERT_CELL_AFTER,
-  payload: { id: null, type: 'text' },
-});
