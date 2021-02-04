@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import AddCell from './add-cell';
 import CellListItem from './CellListItem';
@@ -8,6 +8,7 @@ import ThemeTooltip from './betterUI/theme-tooltip';
 import ScrollDownTooltip from './betterUI/scroll-down-tooltip';
 import DarkLogo from '../assets/logo-light-bg.svg';
 import LightLogo from '../assets/logo-dark-bg.svg';
+import { useActions } from '../hooks/useActions';
 
 type MouseCoords = {
   x: number;
@@ -17,6 +18,11 @@ const CellList: React.FC = () => {
   const cells = useTypedSelector(({ cells: { data, order } }) =>
     order.map(id => data[id]),
   );
+  const { fetchCells } = useActions();
+  useEffect(() => {
+    fetchCells();
+  }, []);
+
   const [theme, setTheme] = useState<string>('dark');
   const [toolTip, setToolTip] = useState<string>('');
   const [mousePointer, setMouserPointer] = useState<MouseCoords>({
