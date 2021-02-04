@@ -1,6 +1,6 @@
 {
   "name": "@giftbox-cli/local-client",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "publishConfig": {
     "access": "public"
   },
@@ -20,6 +20,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-redux": "7.1.15",
     "@types/react-resizable": "1.7.2",
+    "@types/redux-logger": "^3.0.8",
     "@uiw/react-md-editor": "2.1.1",
     "axios": "0.21.1",
     "bulmaswatch": "^0.8.1",
@@ -41,8 +42,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "2.3.0",
     "typescript": "^4.0.3",
-    "web-vitals": "^0.2.4",
-    "@types/redux-logger": "^3.0.8"
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
