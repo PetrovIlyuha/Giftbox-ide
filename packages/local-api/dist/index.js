@@ -12,7 +12,7 @@ var serveDocs = function (port, filename, dir, useProxy) {
     var app = express_1.default();
     app.use(cells_1.createCellsRouter(filename, dir));
     if (useProxy) {
-        console.log('serving locally using proxy');
+        console.log('serving locally using proxy to react app');
         app.use(http_proxy_middleware_1.createProxyMiddleware({
             target: 'http://localhost:3000',
             ws: true,

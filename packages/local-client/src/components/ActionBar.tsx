@@ -16,7 +16,7 @@ const ActionBar: React.FC<ActionBarProps> = ({ id }) => {
   return (
     <div className='action-bar'>
       <button className='button is-info is-small'>
-        <IoIosArrowDropupCircle size={20} onClick={() => moveCell(id, 'up')} />
+        <IoIosArrowDropupCircle size={22} onClick={() => moveCell(id, 'up')} />
       </button>
       <button className='button is-secondary is-small'>
         <IoIosArrowDropdownCircle

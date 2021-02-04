@@ -17,7 +17,7 @@ export const serveCommand = new Command()
         !isProduction,
       );
       console.log(
-        `Opened ${filepath}/${filename}. Navigate to http://localhost:${options.port} to edit your giftbox notebook`,
+        `Opened ${filepath}/${filename}. Please Navigate to http://localhost:${options.port} to edit your giftbox notebook`,
       );
     } catch (error) {
       if (error.code === 'EADDRINUSE') {
